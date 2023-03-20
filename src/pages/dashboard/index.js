@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import FHIR from 'fhirclient';
 
 // material-ui
 import {
@@ -72,6 +73,10 @@ const status = [
 const DashboardDefault = () => {
     const [value, setValue] = useState('today');
     const [slot, setSlot] = useState('week');
+    FHIR.oauth2.authorize({
+        "client_id": "my_web_app",
+        "scope": "patient/*.read"
+    });
 
     return (
         <Grid container rowSpacing={4.5} columnSpacing={2.75}>
