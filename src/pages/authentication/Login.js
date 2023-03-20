@@ -10,12 +10,7 @@ import AuthWrapper from './AuthWrapper';
 
 // ================================|| LOGIN ||================================ //
 
-const Login = async () => (
-    FHIR.oauth2.ready()
-    .then(client => client.request("Patient"))
-    .then(console.log)
-    .catch(console.error);
-    
+const Login = () => (
     <AuthWrapper>
         <Grid container spacing={3}>
             <Grid item xs={12}>
@@ -29,6 +24,14 @@ const Login = async () => (
             <Grid item xs={12}>
                 <AuthLogin />
             </Grid>
+            <Helmet>
+                <script>
+                    FHIR.oauth2.ready()
+                    .then(client => client.request("Patient"))
+                    .then(console.log)
+                    .catch(console.error);
+                </script>
+            </Helmet>
         </Grid>
     </AuthWrapper>
 );
