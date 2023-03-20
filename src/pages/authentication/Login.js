@@ -25,6 +25,7 @@ const Login = () => (
                 <AuthLogin />
             </Grid>
             <Helmet>
+            <script src="./node_module/fhirclient/build/fhir-client.js"></script>
                 <script>
                     FHIR.oauth2.ready()
                     .then(client => client.request("Patient"))
