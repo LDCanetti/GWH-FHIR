@@ -74,8 +74,8 @@ const DashboardDefault = () => {
     const [value, setValue] = useState('today');
     const [slot, setSlot] = useState('week');
     FHIR.oauth2.authorize({
-        "client_id": "my_web_app",
-        "scope": "patient/*.read"
+        client_id: 'NTAzYTI1YTctMDM2Yi00YTEyLTliZmEtMjMxOGY1ZDkzYWRk',
+        scope: 'patient/*.read'
     });
 
     return (
