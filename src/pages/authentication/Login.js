@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { async, FHIR } from '../../../node_modules/fhirclient/build/fhir-client';
+import FHIR from 'fhirclient';
 
 // material-ui
 import { Grid, Stack, Typography } from '@mui/material';
@@ -11,6 +11,11 @@ import AuthWrapper from './AuthWrapper';
 // ================================|| LOGIN ||================================ //
 
 const Login = () => (
+    FHIR.oauth2.ready()
+    .then(client => client.request("Patient"))
+    .then(console.log)
+    .catch(console.error);
+    
     <AuthWrapper>
         <Grid container spacing={3}>
             <Grid item xs={12}>
