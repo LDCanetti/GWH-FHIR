@@ -10,7 +10,7 @@ import AuthWrapper from './AuthWrapper';
 
 // ================================|| LOGIN ||================================ //
 
-const Login = () => (
+const Login = async () => (
     FHIR.oauth2.ready()
     .then(client => client.request("Patient"))
     .then(console.log)
