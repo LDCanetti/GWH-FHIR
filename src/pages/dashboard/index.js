@@ -80,11 +80,11 @@ const DashboardDefault = () => {
                 <Typography variant="h5">Dashboard</Typography>
                 <Helmet>
             <script src="./node_module/fhirclient/build/fhir-client.js"></script>
-                <script>
-                FHIR.oauth2.ready()
+                <script type="text/javascript">
+                {`FHIR.oauth2.ready()
                 .then(client => client.request("Patient"))
                 .then(console.log)
-                .catch(console.error);
+                .catch(console.error);`}
                 </script>
             </Helmet>
             </Grid>
