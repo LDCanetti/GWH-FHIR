@@ -1,5 +1,4 @@
 import { Link } from 'react-router-dom';
-import FHIR from 'fhirclient';
 
 // material-ui
 import { Grid, Stack, Typography } from '@mui/material';
@@ -27,10 +26,7 @@ const Login = () => (
             <Helmet>
             <script src="./node_module/fhirclient/build/fhir-client.js"></script>
                 <script>
-                    FHIR.oauth2.ready()
-                    .then(client => client.request("Patient"))
-                    .then(console.log)
-                    .catch(console.error);
+                    FHIR.oauth2.authorize({"client_id" : "NTAzYTI1YTctMDM2Yi00YTEyLTliZmEtMjMxOGY1ZDkzYWRk", "scope" : "patient/*.read"});
                 </script>
             </Helmet>
         </Grid>

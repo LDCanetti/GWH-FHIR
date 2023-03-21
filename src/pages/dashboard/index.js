@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import FHIR from 'fhirclient';
 
 // material-ui
 import {
@@ -73,16 +72,21 @@ const status = [
 const DashboardDefault = () => {
     const [value, setValue] = useState('today');
     const [slot, setSlot] = useState('week');
-    FHIR.oauth2.authorize({
-        client_id: 'NTAzYTI1YTctMDM2Yi00YTEyLTliZmEtMjMxOGY1ZDkzYWRk',
-        scope: 'patient/*.read'
-    });
 
     return (
         <Grid container rowSpacing={4.5} columnSpacing={2.75}>
             {/* row 1 */}
             <Grid item xs={12} sx={{ mb: -2.25 }}>
                 <Typography variant="h5">Dashboard</Typography>
+                <Helmet>
+            <script src="./node_module/fhirclient/build/fhir-client.js"></script>
+                <script>
+                FHIR.oauth2.ready()
+                .then(client => client.request("Patient"))
+                .then(console.log)
+                .catch(console.error);
+                </script>
+            </Helmet>
             </Grid>
             <Grid item xs={12} sm={6} md={4} lg={3}>
                 <AnalyticEcommerce title="Total Page Views" count="4,42,236" percentage={59.3} extra="35,000" />
