@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Helmet } from "react-helmet";
+import { Helmet } from 'react-helmet';
 
 // material-ui
 import { Grid, Stack, Typography } from '@mui/material';
@@ -25,9 +25,9 @@ const Login = () => (
                 <AuthLogin />
             </Grid>
             <Helmet>
-            <script src="./node_module/fhirclient/build/fhir-client.js"></script>
+                <script src="./node_module/fhirclient/build/fhir-client.js"></script>
                 <script type="text/javascript">
-                {`FHIR.oauth2.authorize({"client_id" : "NTAzYTI1YTctMDM2Yi00YTEyLTliZmEtMjMxOGY1ZDkzYWRk", "scope" : "patient/*.read"});`}
+                    {`FHIR.oauth2.authorize({"client_id" : "NTAzYTI1YTctMDM2Yi00YTEyLTliZmEtMjMxOGY1ZDkzYWRk", "scope" : "patient/*.read"});`}
                 </script>
             </Helmet>
         </Grid>
