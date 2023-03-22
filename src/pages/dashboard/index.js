@@ -80,7 +80,7 @@ const DashboardDefault = () => {
             <Grid item xs={12} sx={{ mb: -2.25 }}>
                 <Typography variant="h5">Dashboard</Typography>
                 <Helmet>
-                    <script src="./node_module/fhirclient/build/fhir-client.js"></script>
+                    <script src=".../node_module/fhirclient/build/fhir-client.js"></script>
                     <script type="text/javascript">
                         {`FHIR.oauth2.ready()
                 .then(client => client.request("Patient"))
