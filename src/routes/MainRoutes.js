@@ -6,6 +6,7 @@ import MainLayout from 'layout/MainLayout';
 
 // render - dashboard
 const DashboardDefault = Loadable(lazy(() => import('pages/dashboard')));
+const AuthLogin = Loadable(lazy(() => import('pages/authentication/Login')));
 
 // render - sample page
 const SamplePage = Loadable(lazy(() => import('pages/extra-pages/SamplePage')));
@@ -24,7 +25,7 @@ const MainRoutes = {
     children: [
         {
             path: '/',
-            element: <DashboardDefault />
+            element: <AuthLogin />
         },
         {
             path: 'color',
@@ -35,7 +36,7 @@ const MainRoutes = {
             children: [
                 {
                     path: 'default',
-                    element: <DashboardDefault />
+                    element: <AuthLogin />
                 }
             ]
         },
